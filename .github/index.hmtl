@@ -1,0 +1,380 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kamu 💖</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #090909, #1b0715, #080808);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* PEMBUKA */
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: radial-gradient(circle, #35132b, #050505);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1s;
+}
+
+.open-box {
+    padding: 35px;
+}
+
+.open-box .heart {
+    font-size: 80px;
+    animation: pulse 1.5s infinite;
+}
+
+.open-box h1 {
+    font-size: 38px;
+    margin: 20px 0 10px;
+}
+
+.open-box p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff2d75, #ff6b9d);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #ff2d7566;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* CONTENT */
+#content {
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 80px);
+    background: linear-gradient(90deg, #ff4f91, #ffb6d3);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #ddd;
+    font-size: 18px;
+}
+
+.scroll {
+    margin-top: 45px;
+    color: #ff76a9;
+}
+
+/* SECTION */
+section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 35px;
+    margin-bottom: 40px;
+    color: #ff75a9;
+}
+
+/* PESAN */
+.message {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    backdrop-filter: blur(10px);
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* FOTO */
+.gallery {">
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.photo {
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #222;
+    border: 2px solid #ff4f9133;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+/* KARTU */
+.card {
+    max-width: 650px;
+    margin: auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #21101a, #120b10);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px #000;
+}
+
+.card .big-heart {
+    font-size: 70px;
+    animation: pulse 1.5s infinite;
+}
+
+/* FOOTER */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #050505;
+    color: #777;
+}
+
+/* HATI TERBANG */
+.floating-heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp linear forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN PEMBUKA -->
+<div id="opening">
+    <div class="open-box">
+        <div class="heart">💖</div>
+
+        <h1>Hai, Kamu!</h1>
+
+        <p>Ada sesuatu yang ingin aku sampaikan...</p>
+
+        <button onclick="openWebsite()">
+            Buka Pesan 💌
+        </button>
+    </div>
+</div>
+
+<!-- WEBSITE -->
+<div id="content">
+
+    <div class="hero">
+        <div>
+            <h1>Untuk Kamu 💕</h1>
+
+            <p>
+                Seseorang yang membuat hari-hari terasa lebih spesial.
+            </p>
+
+            <div class="scroll">
+                ↓ Scroll ke bawah ↓
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PESAN -->
+    <section>
+        <h2>💌 Sebuah Pesan</h2>
+
+        <div class="message">
+            <p>
+                Hai kamu...
+                <br><br>
+
+                Aku cuma ingin bilang bahwa kamu adalah seseorang
+                yang sangat berarti. Terima kasih karena sudah hadir
+                dan memberikan banyak cerita serta warna dalam
+                hari-hari yang biasa.
+                <br><br>
+
+                Semoga kamu selalu bahagia, selalu tersenyum,
+                dan tetap menjadi dirimu sendiri.
+                <br><br>
+
+                Jangan lupa...
+                kamu itu berharga. ❤️
+            </p>
+        </div>
+    </section>
+
+
+    <!-- GALERI -->
+    <section>
+        <h2>📸 Kenangan</h2>
+
+        <div class="gallery">
+
+            <!-- GANTI FOTO DI SINI -->
+            <div class="photo">
+                <img src="foto1.jpg" alt="Foto 1">
+            </div>
+
+            <div class="photo">
+                <img src="foto2.jpg" alt="Foto 2">
+            </div>
+
+            <div class="photo">
+                <img src="foto3.jpg" alt="Foto 3">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- KARTU -->
+    <section>
+
+        <div class="card">
+
+            <div class="big-heart">❤️</div>
+
+            <h2>Terima Kasih</h2>
+
+            <p>
+                Terima kasih sudah menjadi bagian dari cerita ini.
+                Semoga selalu ada banyak hal baik yang datang
+                untukmu.
+            </p>
+
+            <br>
+
+            <button onclick="createHearts()">
+                Kirim Banyak ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Dibuat dengan ❤️ untuk seseorang yang spesial
+    </footer>
+
+</div>
+
+
+<script>
+
+function openWebsite() {
+
+    document.getElementById("opening").style.opacity = "0";
+
+    setTimeout(function() {
+        document.getElementById("opening").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 1000);
+
+    createHearts();
+}
+
+
+function createHearts() {
+
+    for(let i = 0; i < 25; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+
+        heart.innerHTML =
+            ["❤️","💕","💖","💗","💓","💘"]
+            [Math.floor(Math.random() * 6)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 5) + "s";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+}
+
+</script>
+
+</body>
+</html>
+```
